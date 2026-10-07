@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drummond Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav site-nav--bar" aria-label="Primary">
+    <a class="site-nav__wordmark" href="#" aria-label="Drummond Projects">
+      <span class="site-nav__wordmark-full">Drummond Projects</span>
+      <span class="site-nav__wordmark-short">DP</span>
+    </a>
+    <ul class="site-nav__links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a class="site-nav__cta" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-track">
+    <header class="hero">
+      <div class="hero__frame">
+        <h1 class="visually-hidden">Drummond Projects</h1>
+        <div class="hero__media" data-hero-slides>
+          <img src="assets/sanaa/sanaa1.jpg" width="1600" height="900" alt="Sanaa Center photograph">
+        </div>
+        <div class="hero__overlay">
+          <a class="hero-logo" href="#">
+            <img src="assets/drummondprojects_logo.svg" alt="Drummond Projects" width="160" height="42">
+          </a>
+          <div class="site-nav site-nav--spacer" aria-hidden="true">
+            <span class="site-nav__wordmark">
+              <span class="site-nav__wordmark-full">Drummond Projects</span>
+              <span class="site-nav__wordmark-short">DP</span>
+            </span>
+            <span class="site-nav__links">
+              <span>Work</span>
+              <span>Studio</span>
+              <span>Impact</span>
+              <span class="site-nav__cta">Contact</span>
+            </span>
+          </div>
+
+          <div class="hero__sky-labels">
+            <p class="hero__sky-label">Framing the future</p>
+            <p class="hero__sky-label">Washington, DC</p>
+          </div>
+
+          <div class="hero__main">
+            <div class="hero__lede">
+              <div class="hero-progress" role="tablist" aria-label="Featured photographs"></div>
+              <p class="hero__slide-name" id="hero-slide-name"></p>
+              <p class="hero__tagline" id="hero-slide-text">We create spaces that inspire imagination and enable human possibility.</p>
+              <a class="hero__pill" href="#work">View the work</a>
+            </div>
+          </div>
+
+          <ul class="hero__cards" aria-label="Studio highlights">
+            <li class="hero-card">
+              <p class="hero-card__value">15+</p>
+              <p class="hero-card__label">Years of creating spaces</p>
+            </li>
+            <li class="hero-card">
+              <p class="hero-card__value">90+</p>
+              <p class="hero-card__label">Amazing projects brought to life</p>
+            </li>
+            <li class="hero-card">
+              <p class="hero-card__value">75+</p>
+              <p class="hero-card__label">Happy clients, happy spaces</p>
+            </li>
+            <li class="hero-card">
+              <p class="hero-card__value">11</p>
+              <p class="hero-card__label">Designs that earn awards</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="page-main">
+    <section class="section section--vision" aria-labelledby="vision-heading">
+      <div class="section__inner">
+        <div class="split-head">
+          <div class="split-head__primary">
+            <p class="eyebrow">Studio</p>
+            <h2 class="section-heading" id="vision-heading">We create spaces that inspire imagination and enable human possibility.</h2>
+          </div>
+          <div class="split-head__secondary">
+            <p class="split-head__lede">Framing the future. A design-build studio in Washington, DC.</p>
+            <a class="btn-pill" href="#studio">The studio</a>
+          </div>
+        </div>
+        <figure class="vision-photo">
+          <img src="assets/sanaa/sanaa2.jpg" width="1600" height="900" alt="Sanaa Center photograph">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--work" id="work" aria-labelledby="work-eyebrow">
+      <div class="section__inner">
+        <div class="split-head split-head--work">
+          <div class="split-head__primary">
+            <p class="eyebrow" id="work-eyebrow">Featured work</p>
+            <h2 class="section-heading section-heading--sm">Recent work</h2>
+          </div>
+          <div class="split-head__secondary split-head__secondary--end">
+            <p class="split-head__lede">Five projects in Washington, Baltimore, and New York.</p>
+          </div>
+        </div>
+
+        <div class="work-toolbar">
+          <button type="button" class="work-step work-step--prev" aria-label="Previous projects">
+            <span class="work-step__label">Previous</span>
+            <span class="work-step__circle" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <button type="button" class="work-step work-step--next" aria-label="Next projects">
+            <span class="work-step__label">Next</span>
+            <span class="work-step__circle" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="work-row" aria-live="polite"></div>
+
+        <div id="feature" aria-labelledby="feature-label">
+          <figure class="sanaa-hero">
+            <img src="assets/sanaa/sanaa2.jpg" width="1600" height="900" alt="Sanaa Center photograph">
+            <div class="feature-gallery" hidden>
+              <button type="button" class="feature-gallery__step feature-gallery__step--prev" aria-label="Previous image">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="feature-gallery__step feature-gallery__step--next" aria-label="Next image">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </figure>
+          <div class="feature-film" hidden>
+            <p class="feature-film__count" aria-live="polite"></p>
+            <div class="feature-thumbs" role="group" aria-label="Project photographs"></div>
+          </div>
+          <div class="sanaa-grid">
+            <div class="sanaa-col">
+              <p class="label" id="feature-label">The project</p>
+              <p class="body-text">The Sanaa Center is for the cultural life of Pennsylvania Avenue in West Baltimore. 18,000 square feet for a 350-seat theatre, artist studios, production space, and a cafe and bar. A 4,000-square-foot addition to the Harris Marcus Center extends the work of Intersection of Change.</p>
+            </div>
+            <div class="sanaa-col sanaa-col--record">
+              <p class="label">The record</p>
+              <ul class="record-stats">
+                <li>18,000 sq ft</li>
+                <li>In progress</li>
+                <li>Baltimore</li>
+              </ul>
+              <p class="record-type">Commercial / Cultural</p>
+              <a class="text-link" href="#contact">Write the studio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--studio" id="studio" aria-labelledby="studio-heading">
+      <div class="section__inner studio-layout">
+        <figure class="studio-photo">
+          <img src="assets/colab/colab1.jpg" width="900" height="1100" alt="Co-Lab photograph">
+        </figure>
+        <div class="studio-content">
+          <p class="eyebrow">The studio</p>
+          <h2 class="section-heading section-heading--sm" id="studio-heading">How a project is framed</h2>
+          <p class="studio-tagline">Site, frame, build, steward.</p>
+          <ul class="studio-list">
+            <li><a href="#work"><span>Commercial</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+            <li><a href="#work"><span>Hospitality</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+            <li><a href="#work"><span>Multifamily</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+            <li><a href="#work"><span>Residential</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+            <li><a href="#work"><span>Installation</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+            <li><a href="#work"><span>Education &amp; Cultural</span><span class="accent-mark" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--impact" id="impact" aria-labelledby="impact-heading">
+      <div class="section__inner impact-block">
+        <h2 class="impact-heading" id="impact-heading">
+          <span>Refined</span>
+          <span>Impactful</span>
+          <span>Inclusive</span>
+        </h2>
+        <div class="impact-mosaic" aria-label="Project photographs">
+          <figure class="mosaic-cell mosaic-cell--b"><img src="assets/colab/colab2.jpg" width="900" height="700" alt="Co-Lab photograph"></figure>
+          <figure class="mosaic-cell mosaic-cell--c"><img src="assets/colab/colab4.jpg" width="700" height="900" alt="Co-Lab photograph"></figure>
+          <figure class="mosaic-cell mosaic-cell--d"><img src="assets/elmina/elmina2.jpg" width="800" height="600" alt="Elmina photograph"></figure>
+          <figure class="mosaic-cell mosaic-cell--e"><img src="assets/elmina/elmina4.jpg" width="600" height="800" alt="Elmina photograph"></figure>
+          <figure class="mosaic-cell mosaic-cell--f"><img src="assets/grounded/grounded1.jpg" width="900" height="650" alt="Grounded photograph"></figure>
+          <figure class="mosaic-cell mosaic-cell--g"><img src="assets/pointofaction/pointofaction1.jpg" width="1000" height="700" alt="Point of Action photograph"></figure>
+        </div>
+        <p class="impact-cta-wrap">
+          <a class="btn-pill" href="#work">View the work</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section__inner section__inner--flush">
+        <div class="contact-band">
+          <div class="contact-band__media">
+            <img src="assets/pointofaction/pointofaction1.jpg" width="1400" height="900" alt="Point of Action photograph">
+          </div>
+          <div class="contact-band__panel">
+            <h2 class="contact-band__title" id="contact-heading">Write the studio</h2>
+            <p class="contact-band__sub">Clients, partners, and press.</p>
+            <a class="btn-pill btn-pill--on-ink" href="mailto:studio@drummondprojects.com">studio@drummondprojects.com</a>
+            <a class="contact-band__phone" href="tel:+12029195115">(202) 919-5115</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="footer-wordmark">Drummond Projects</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <address class="footer-address">
+            1225 I Street NW<br>
+            Washington, DC<br>
+            <a href="mailto:studio@drummondprojects.com">studio@drummondprojects.com</a><br>
+            <a href="tel:+12029195115">(202) 919-5115</a>
+          </address>
+        </div>
+        <nav class="footer-nav" aria-label="Work categories">
+          <p class="footer-nav__title">Work</p>
+          <ul>
+            <li><a href="#work">Commercial</a></li>
+            <li><a href="#work">Hospitality</a></li>
+            <li><a href="#work">Multifamily</a></li>
+            <li><a href="#work">Residential</a></li>
+            <li><a href="#work">Installation</a></li>
+            <li><a href="#work">Education &amp; Cultural</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Studio links">
+          <p class="footer-nav__title">Studio</p>
+          <ul>
+            <li><a href="#studio">About</a></li>
+            <li><a href="#studio">Services</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#newsletter" id="press-link">Press</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer-bar">&copy; Drummond Projects 2026</p>
+    </div>
+  </footer>
+  <dialog class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
+    <div class="newsletter__panel">
+      <button type="button" class="newsletter__close" aria-label="Close" data-newsletter-close>&times;</button>
+      <form class="newsletter__form">
+        <p class="eyebrow">Newsletter</p>
+        <h2 class="newsletter__title" id="newsletter-heading">Studio notes</h2>
+        <p class="newsletter__text">Project news for clients, partners, and press.</p>
+        <label class="newsletter__label" for="newsletter-email">Email</label>
+        <input class="newsletter__input" id="newsletter-email" name="email" type="email" autocomplete="email" required placeholder="name@studio.com">
+        <button class="btn-pill" type="submit">Join</button>
+      </form>
+      <div class="newsletter__thanks" hidden>
+        <p class="eyebrow">Newsletter</p>
+        <h2 class="newsletter__title">Noted</h2>
+        <p class="newsletter__text">Thank you. This preview keeps the address here and does not send it.</p>
+        <button class="btn-pill" type="button" data-newsletter-close>Close</button>
+      </div>
+    </div>
+  </dialog>
+  <script src="motion.js?v=heroreel2" defer></script>
+</body>
+</html>
