@@ -380,26 +380,16 @@
     return copy;
   }
 
-  function heroBlurb(project) {
-    if (project.name === 'Sanaa Center') {
-      return 'The Sanaa Center is for the cultural life of Pennsylvania Avenue in West Baltimore.';
-    }
-    return project.body;
-  }
-
   function initHeroReel() {
     var media = document.querySelector('[data-hero-slides]');
     var progress = document.querySelector('.hero-progress');
-    var nameEl = document.getElementById('hero-slide-name');
-    var textEl = document.getElementById('hero-slide-text');
-    if (!media || !progress || !nameEl || !textEl) return;
+    if (!media || !progress) return;
 
     var slides = shuffleList(PROJECTS).slice(0, 4).map(function (project) {
       var images = project.images;
       var src = images[Math.floor(Math.random() * images.length)];
       return {
         name: project.name,
-        text: heroBlurb(project),
         src: src,
         alt: project.name + ' photograph'
       };
@@ -454,9 +444,6 @@
 
     function goTo(index) {
       slideIndex = index;
-      var slide = slides[index];
-      nameEl.textContent = slide.name;
-      textEl.textContent = slide.text;
 
       for (var n = 0; n < imgs.length; n++) {
         var on = n === index;
