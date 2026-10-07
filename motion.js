@@ -8,7 +8,6 @@
       images: [
         'assets/sanaa/sanaa1.jpg',
         'assets/sanaa/sanaa2.jpg',
-        'assets/sanaa/sanaa3.png',
       ],
       meta: 'Baltimore · In progress · Commercial / Cultural · 18,000 sq ft',
       body:
