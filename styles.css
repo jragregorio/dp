@@ -656,8 +656,21 @@ address {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--canvas);
+  background: rgba(231, 225, 214, 0.72);
+  color: var(--ink);
+  border: 1px solid rgba(28, 25, 21, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    background-color 0.4s var(--ease-in-out),
+    color 0.4s var(--ease-in-out),
+    border-color 0.4s var(--ease-in-out);
+}
+
+.work-step:hover .work-step__circle {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
 }
 
 .work-row {
@@ -1241,7 +1254,8 @@ address {
 
   .site-nav__links a,
   .site-nav__cta,
-  .site-nav__wordmark {
+  .site-nav__wordmark,
+  .work-step__circle {
     transition: none;
   }
 
