@@ -1,12 +1,12 @@
 /* Drummond Projects — static prototype tokens */
 :root {
-  --paper: #e7e1d6;
-  --paper-2: #efebe3;
-  --paper-3: #e4ddd2;
-  --canvas: #f6f4f1;
-  --ink: #1c1915;
-  --stone: #8a847a;
-  --accent: #e4572e;
+  --paper: #0d0e10;
+  --paper-2: #141518;
+  --paper-3: #1c1d21;
+  --canvas: #111214;
+  --ink: #f4f4f4;
+  --stone: #9a9a9a;
+  --accent: #f4f4f4;
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-body: "Outfit", system-ui, sans-serif;
@@ -25,6 +25,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
+  color-scheme: dark;
+}
+
+::selection {
+  background: #f4f4f4;
+  color: #0d0e10;
 }
 
 body {
@@ -139,7 +145,7 @@ address {
   position: relative;
   height: 100dvh;
   min-height: 100dvh;
-  background: var(--ink);
+  background: var(--paper);
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
@@ -215,10 +221,10 @@ address {
   max-width: 100%;
   padding: 0.4rem 0.5rem 0.4rem 1rem;
   border-radius: 999px;
-  background: rgba(231, 225, 214, 0.45);
+  background: rgba(13, 14, 16, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(28, 25, 21, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .site-nav--bar {
@@ -309,7 +315,7 @@ address {
 .site-nav__cta.is-current:hover,
 .site-nav__wordmark.is-current:hover {
   color: var(--paper);
-  background: #2a2620;
+  background: var(--ink);
 }
 
 .hero__sky-labels {
@@ -395,7 +401,7 @@ address {
   height: 2px;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.38);
-  box-shadow: 0 0 0 1px rgba(28, 25, 21, 0.18);
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.18);
   overflow: hidden;
   pointer-events: none;
 }
@@ -441,18 +447,18 @@ address {
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--ink);
-  background: rgba(231, 225, 214, 0.55);
+  color: #111;
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(28, 25, 21, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   text-decoration: none;
 }
 
 .hero__pill:hover {
-  color: var(--ink);
-  background: rgba(231, 225, 214, 0.72);
+  color: #111;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .hero__cards {
@@ -467,10 +473,10 @@ address {
 .hero-card {
   padding: clamp(1.15rem, 2vw, 1.5rem) clamp(1rem, 1.6vw, 1.35rem);
   border-radius: 1.15rem;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .hero-card__value {
@@ -570,17 +576,17 @@ address {
 
 .btn-pill:hover {
   color: var(--paper);
-  background: #2a2620;
+  background: #e8e8e8;
 }
 
 .btn-pill--on-ink {
-  color: var(--ink);
-  background: var(--canvas);
+  color: var(--paper);
+  background: var(--ink);
 }
 
 .btn-pill--on-ink:hover {
-  color: var(--ink);
-  background: #fff;
+  color: var(--paper);
+  background: #e8e8e8;
 }
 
 .accent-mark {
@@ -645,9 +651,9 @@ address {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: rgba(231, 225, 214, 0.72);
+  background: var(--paper-2);
   color: var(--ink);
-  border: 1px solid rgba(28, 25, 21, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition:
@@ -774,13 +780,13 @@ address {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(246, 244, 241, 0.88);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  color: #111;
   cursor: pointer;
 }
 
 .feature-gallery__step:hover {
-  background: var(--canvas);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .feature-film {
@@ -945,16 +951,25 @@ address {
 }
 
 .mosaic-cell {
+  position: relative;
   margin: 0;
   border-radius: 1rem;
   overflow: hidden;
 }
 
 .mosaic-cell img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(0.85) contrast(1.02);
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-in-out);
+}
+
+.mosaic-cell img.is-visible {
+  opacity: 1;
 }
 
 .mosaic-cell--a {
@@ -1032,8 +1047,8 @@ address {
   align-items: flex-start;
   gap: 1rem;
   padding: clamp(2rem, 5vw, 3.5rem);
-  background: var(--ink);
-  color: var(--canvas);
+  background: var(--paper-2);
+  color: var(--ink);
 }
 
 .contact-band__title {
@@ -1059,14 +1074,14 @@ address {
 }
 
 .contact-band__phone:hover {
-  color: var(--canvas);
+  color: var(--ink);
   text-decoration: underline;
 }
 
 /* —— Footer —— */
 .site-footer {
-  background: var(--ink);
-  color: var(--canvas);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .site-footer__inner {
@@ -1080,7 +1095,7 @@ address {
   font-size: clamp(3rem, 12vw, 8rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  color: rgba(246, 244, 241, 0.12);
+  color: rgba(255, 255, 255, 0.08);
   margin: 0 0 clamp(2rem, 5vw, 3.5rem);
   pointer-events: none;
   user-select: none;
@@ -1097,11 +1112,11 @@ address {
 .footer-address {
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: var(--canvas);
+  color: var(--ink);
 }
 
 .footer-address a {
-  color: var(--canvas);
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -1128,7 +1143,7 @@ address {
 .footer-nav a {
   font-size: 0.9375rem;
   text-decoration: none;
-  color: var(--canvas);
+  color: var(--ink);
 }
 
 .footer-nav a:hover {
@@ -1140,7 +1155,7 @@ address {
   font-size: 0.8125rem;
   color: var(--stone);
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(138, 132, 122, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .newsletter {
@@ -1152,12 +1167,12 @@ address {
 }
 
 .newsletter::backdrop {
-  background: rgba(28, 25, 21, 0.48);
+  background: rgba(17, 17, 17, 0.48);
 }
 
 .newsletter__panel {
   width: min(26rem, calc(100vw - 2rem));
-  background: var(--canvas);
+  background: var(--paper-2);
   border-radius: 1.25rem;
   padding: clamp(1.75rem, 4vw, 2.25rem);
   position: relative;
@@ -1217,10 +1232,11 @@ address {
   width: 100%;
   margin-bottom: 1.25rem;
   padding: 0.8rem 0.9rem;
-  border: 1px solid rgba(28, 25, 21, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 0.75rem;
-  background: #fff;
+  background: var(--paper-3);
   color: var(--ink);
+  caret-color: var(--ink);
   font: inherit;
   font-size: 1rem;
 }
@@ -1245,6 +1261,10 @@ address {
   .site-nav__cta,
   .site-nav__wordmark,
   .work-step__circle {
+    transition: none;
+  }
+
+  .mosaic-cell img {
     transition: none;
   }
 

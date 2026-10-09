@@ -1,0 +1,552 @@
+{
+  "scraped_at": "2026-10-07T08:52:40Z",
+  "work_listing_url": "https://www.drummondprojects.com/work",
+  "project_count": 35,
+  "projects": [
+    {
+      "folder": "commercial_anacostia_art_center",
+      "title": "Anacostia Art Center",
+      "type": "commercial",
+      "type_raw": "Commercial | Instituational",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/anacostia-art-center"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad123bf77be484eb3917d7_AAC_EXTERIOR REVISED (1).jpg",
+        "02_68ad145303e50daa7c95f74d_Screenshot 2025-08-25 at 9.52.48 PM.png"
+      ]
+    },
+    {
+      "folder": "commercial_co_lab",
+      "title": "Co-Lab",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/co-lab"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad23cf928c7e66c48bb1ac_Community change final images (1).jpg",
+        "02_69b93d0340c92fe1d6a072f9_DP_CommunityChange-30.jpg",
+        "03_69b93d3c3964086fa36fbf4f_DP_CommunityChange-23.jpg",
+        "04_69b93ddf2025f28201dd406d_DP_CommunityChange-32-2.jpg",
+        "05_69b93e0a1e637f5b60d2d92b_DP_CommunityChange-17.jpg",
+        "06_69b93eeeafb17f9ef2cc0bd1_DP_CommunityChange-19B.jpg",
+        "07_69b93e6bc840370a0c80045d_DP_CommunityChange-22.jpg",
+        "08_69b9406fb05456b1973173d1_DP_CommunityChange-25.jpg",
+        "09_69b93f5fb9f1bee5ed087657_DP_CommunityChange-28.jpg",
+        "10_69b93f718a5c87f01654ec59_DP_CommunityChange-21.jpg",
+        "11_69b93ffda43a3161695171e6_DP_CommunityChange-27.jpg",
+        "12_69b93fa2993fe1e7e6e6f252_DP_CommunityChange-33.jpg",
+        "13_69b940b274a582fcc1c374bf_DP_CommunityChange-31.jpg",
+        "14_69b94112011dcbdfec365148_DP_CommunityChange-36B-2.jpg",
+        "15_69b940c153cf70693a89259a_DP_CommunityChange-35.jpg"
+      ]
+    },
+    {
+      "folder": "commercial_dp_office_downtown",
+      "title": "DP Office - Downtown",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/dp-office-downtown"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad2eaaa645cf5ec6eb3667_DP_IStOffice_18.jpg",
+        "02_68ad3078fe97809b8dd2db4b_20250812_AXONUPDATEV2.png"
+      ]
+    },
+    {
+      "folder": "commercial_dp_office_eastern_market",
+      "title": "DP Office - Eastern Market",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/dp-office-eastern-market"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad30d4fe97809b8dd2f386_709D_May2023\u252c\u2310ArseniKhamzin_HR-5.jpg",
+        "02_68ad32e0182596ee54460cdd_709D_May2023\u252c\u2310ArseniKhamzin_HR-3.jpg"
+      ]
+    },
+    {
+      "folder": "commercial_hcd_international",
+      "title": "HCD International",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/hcd-international"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad40a35e7595655db8262a_Copy of 20230811_Kelleher_HCDI_03a.jpg",
+        "02_68ad40fdaf94609716a64596_Drummond Projects_HCDI.jpg"
+      ]
+    },
+    {
+      "folder": "commercial_inncuvate_innovation_studios",
+      "title": "Inncuvate Innovation Studios",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/inncuvate-innovation-studios"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad45f31920821047ae0b3f_InncuvateHubEntryFinal.webp",
+        "02_68ad46bceac58255f7d7727b_DrummondProjects_InncuvateHub_InncuvateInterior_WB_L_Final.webp",
+        "03_68ad46bcd5e614e2b292d46c_InncuvateHub_InncuvateInterior_MetroEsports_Final.webp",
+        "04_68ad46bcdb30fefc6526cb56_InncuvateExteriorFinal.webp"
+      ]
+    },
+    {
+      "folder": "commercial_palisades",
+      "title": "Palisades",
+      "type": "commercial",
+      "type_raw": "Commercial",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/palisades"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad3d743b7454f9ff148da0_Copy of 6.jpg",
+        "02_68ad3ea82db3d381704be62e_Copy of 7.jpg",
+        "03_68ad3ef3c2b6095889144071_Copy of 9.jpg",
+        "04_68ad3ea12db3d381704be5e6_Copy of 8.jpg",
+        "05_68ad3eae2db3d381704be75e_Copy of 13.jpg"
+      ]
+    },
+    {
+      "folder": "education_cultural_sanaa_center",
+      "title": "Sanaa Center",
+      "type": "education_cultural",
+      "type_raw": "Education & Cultural",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/sanaa-center"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68a59fea0f1ba6e482a7dbc8_sanaa-.png",
+        "02_68b0227def7f9ce8066f16e4_Frame 174.png"
+      ]
+    },
+    {
+      "folder": "hospitality_bronze_dc",
+      "title": "Bronze DC",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/bronze-dc"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad178a3b7454f9ff06ed7c_BronzeDC_June2023\u252c\u2310ArseniKhamzin_LR-8.jpg",
+        "02_69b934ee159289ee761ad1c4_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-10.jpg",
+        "03_69b934f7cc03fbc1cd534485_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-8.jpg",
+        "04_69b93545dc940b67b80912a3_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-7.jpg",
+        "05_69b9353ba8cf28fdb6e20206_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-9.jpg",
+        "06_69b9354e95ea075ff6b878ef_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-11.jpg",
+        "07_69b9355cb25f137560ab928c_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-4.jpg",
+        "08_69b935bade857a9bc8c7416a_BronzeDC_June2023\u252c\u2310ArseniKhamzin_HR-3.jpg",
+        "09_69b935a0a0ee8d6bb3b0cbfe_BronzeDC2.jpg",
+        "10_69b935d6df1c582706b4971c_IMG_3739.jpg",
+        "11_69b936fa846922a7e30b6289_2.png",
+        "12_69b936f6f3f52c2045d1a3b5_1.png"
+      ]
+    },
+    {
+      "folder": "hospitality_elmina_dc",
+      "title": "Elmina DC",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/elmina-dc"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad36fe5e7595655db4e1b9_Elmina-1.jpg",
+        "02_68ad385ca645cf5ec6ef2384_Elmina-29.jpg",
+        "03_68ad3853ba03672548a9513e_Elmina-28.jpg",
+        "04_68ad387aba03672548a97d39_Elmina-16.jpg",
+        "05_68ad387cc6ae43a322b9af75_Elmina-20.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_fraiche",
+      "title": "Fraiche",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/fraiche"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad3904ba03672548a9ef5d_Fraiche-2.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_gaia",
+      "title": "Gaia",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/gaia"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad39c76abdde6034903100_250327_Gaia_07.jpg",
+        "02_68ad3a39f77be484eb46627b_250327_Gaia_15.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_grounded",
+      "title": "Grounded",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/grounded"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad3f57c8f37747f4965bee_06-DRUM_GRND_11-24\u252c\u2310ArseniKhamzin_LR.jpg",
+        "02_68ad3fde03e50daa7ca7fe73_14-DRUM_GRND_11-24\u252c\u2310ArseniKhamzin_LR.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_hq_dc_house",
+      "title": "HQ - DC House",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/hq-dc-house"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad1c59683a6b1117efd59c_600 F St NW Design-0018.jpg",
+        "02_68ad1fe0d5e614e2b28363b9_187A6965.jpg",
+        "03_68ad1f94f77be484eb3eb171_187A6925.jpg",
+        "04_68ad1fb6928c7e66c48aa778_600 F St NW Design-0035.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_hq_kenya_house",
+      "title": "HQ - Kenya House",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/hq-kenya-house"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad235b2db3d381704304d5_240109_HQ+Nairobi_SD+(1).webp"
+      ]
+    },
+    {
+      "folder": "hospitality_kata",
+      "title": "Kata",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/kata"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad46f4448336c6652ef9b1_DP_KATA-2 (1).jpg",
+        "02_68af3b2def87ad9de75ece79_DP_KATA-15.jpg",
+        "03_68af3b2def87ad9de75ece8a_DP_KATA-16.jpg",
+        "04_68af3b2ed01a5ea05b4dcb2a_DP_KATA-19.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_llamabar",
+      "title": "LlamaBar",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/llamabar"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad48fb1920821047b00d9b_Llamabar-7.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_shy_shy",
+      "title": "Shy Shy",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/shy-shy"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68adde8aa4bbc5a7994ba09e_Shy-Shy_Bar_067 - website resize.jpg",
+        "02_68addf27065170c1c3baa4c4_Shy-Shy_Bar_049.jpg"
+      ]
+    },
+    {
+      "folder": "hospitality_sost",
+      "title": "SOST",
+      "type": "hospitality",
+      "type_raw": "Hospitality",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/sost"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68acf068ebd7e7abb577d32f_Sost-15.jpg",
+        "02_68acf20803e50daa7c864b09_Sost-7.jpg"
+      ]
+    },
+    {
+      "folder": "installation_point_of_action",
+      "title": "Point of Action",
+      "type": "installation",
+      "type_raw": "Installation",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/point-of-action"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68add91f56ac4ca4896b3bd9_COVER PHOTO.jpg",
+        "02_68add9412321056e64d87faa_DSC06478.jpg"
+      ]
+    },
+    {
+      "folder": "installation_resonance",
+      "title": "Resonance",
+      "type": "installation",
+      "type_raw": "Installation",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/resonance"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68addbf8bab38c2a9b138a16_20161104-IMG_4150.jpg",
+        "02_68addc72f57031d5d9802b1f_IMG_4131.CR2.jpg",
+        "03_68addc88e0016174c365c70d_resonance1.jpg"
+      ]
+    },
+    {
+      "folder": "installation_rich_man_poor_soul",
+      "title": "Rich Man, Poor Soul",
+      "type": "installation",
+      "type_raw": "Installation, Lighting Design",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/rich-man-poor-soul"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad347585226b972a709602_DSC09930.jpg",
+        "02_68ad363f5e7595655db46d56_DSC09028.jpg"
+      ]
+    },
+    {
+      "folder": "multifamily_600_north_howard",
+      "title": "600 North Howard",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/600-north-howard"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68acf5fb609d765fad6c9f31_600NHowardFinal02.jpg"
+      ]
+    },
+    {
+      "folder": "multifamily_congress_heights",
+      "title": "Congress Heights",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/congress-heights"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad281720ae07ba4291db4b_CongressHeightsLobby.webp"
+      ]
+    },
+    {
+      "folder": "multifamily_hill_east_redevelopment",
+      "title": "Hill East Redevelopment",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/hill-east-redevelopment"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad42706abdde6034941bae_Copy of Drummond Projects_Hill East_Render2.jpg",
+        "02_68ad437630008e5e3368f23a_Copy of Drummond Projects_Hill East_Render4.jpg"
+      ]
+    },
+    {
+      "folder": "multifamily_market_street",
+      "title": "Market Street",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/market-street"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad4b3dc6ae43a322c31e4a_COVER PHOTO.jpg"
+      ]
+    },
+    {
+      "folder": "multifamily_nuuage_co_living",
+      "title": "Nuuage Co-Living",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/nuuage-co-living"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad5e23edd28bc4b5b5ab62_NuuageKitchenLivingDinningC1. - Resizejpg.jpg",
+        "02_68ad5e3a3b7454f9ff1d5c09_NuuageKitchenLivingDinningC2.jpg"
+      ]
+    },
+    {
+      "folder": "multifamily_urban_village",
+      "title": "Urban Village",
+      "type": "multifamily",
+      "type_raw": "Multifamily",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/urban-village"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ade593c14ab55a31d987a0_view-c01-dusk-logo-Copy.jpg"
+      ]
+    },
+    {
+      "folder": "residential_crook_horner",
+      "title": "Crook Horner",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/crook-horner"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad2c23d05c3f3aa9898c7d_301-North-Howard-Street_28.jpg",
+        "02_69b97641c41fdf7ef27a87c5_CROOKC-14.jpg",
+        "03_69b9765e39d506d0f9ace567_CrookHornerLoftsLivingWorking.jpg",
+        "04_69b977c8099aee3a9924a9dc_CrookHornerLoftsKitchen.jpg",
+        "05_69b9769bf2ee47889e696b65_CROOKC-8.jpg",
+        "06_69b977a99d67d2fc37b83dd6_CROOKC-9.jpg",
+        "07_69b978b7fb04f55b4994dd3e_10 Primary Bathroom.jpg",
+        "08_69b977ef6355f4fe0fb90eaa_301-North-Howard-Street_31.jpg",
+        "09_69b97942c14dd42c5d0b1f9e_CROOKC-21.jpg",
+        "10_69b979e570a46298efe3741f_CROOKC-15.jpg",
+        "11_69b979f7ca969df12b0eefb6_CROOKC-10.jpg",
+        "12_69b97a638c33d358a80fb2a5_CROOKC-17.jpg",
+        "13_69b97fa637c36dd808ea7dd1_3.png",
+        "14_69b97fbd9a188cbcf61d8b00_CROOKC-24.jpg",
+        "15_69b980220372f68aac6d3cb6_CROOKC-22.jpg"
+      ]
+    },
+    {
+      "folder": "residential_manhattan_house",
+      "title": "Manhattan House",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/manhattan-house"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ade0ee02e0814477a47bff_COVER PHOTO.jpg",
+        "02_68ade1e4065170c1c3bb7764_15106 - Noe Manhattan House235_balcony.jpg"
+      ]
+    },
+    {
+      "folder": "residential_park_avenue",
+      "title": "Park Avenue",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/park-avenue"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ad0e879cdfc68f3b12e385_605ParkAvenue_11G_lr7.jpg",
+        "02_68ad10c03c4746b3e53f8a1c_COVER SHOT.jpg"
+      ]
+    },
+    {
+      "folder": "residential_tribeca_penthouse",
+      "title": "Tribeca Penthouse",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/tribeca-penthouse"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68addf9d70d2166ddb64095b__Cover Shot.jpg",
+        "02_68ade04ed1799bcbeb0f6eb4_314344741.jpg"
+      ]
+    },
+    {
+      "folder": "residential_walnut_street",
+      "title": "Walnut Street",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/walnut-street"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68d31e28f2b30f5e34b7c531_WalnutDusk-2.jpg",
+        "02_695e51019432519c15988220_231221_FINAL+DP+Diagrams++Page+017 9.png",
+        "03_698c2b546962ac24c4de22fd_231221_FINAL+DP+Diagrams++Page+017 16.png",
+        "04_698c29bea12c0e74618f7aa4_695e50e322f79e0fe4357eef_BronzeDC_June2023__HR-8 3.png",
+        "05_698c29b43eb886baa43af5c8_695e5101b0a887f837f7de3f_231221_FINAL+DP+Diagrams++Page+017 6.png",
+        "06_698c29c6ae5200db33733012_695e51015493265f31339c2a_231221_FINAL+DP+Diagrams++Page+017 11.png",
+        "07_698c29cdac157c952784c6be_695e50ea3075a0c97652e4ee_BronzeDC_June2023__HR-8 11.png",
+        "08_698c2a1cb5cb37dc80e1f945_695e5101038e6891634b43a9_231221_FINAL+DP+Diagrams++Page+017 1.png",
+        "09_698c2a1c2a7400f9619c8bef_695e51017f05dcfe651c43e3_231221_FINAL+DP+Diagrams++Page+017 3.png",
+        "10_698c2a1c26052aa4e3053bac_695e5101348898352a5a1f7d_231221_FINAL+DP+Diagrams++Page+017 4.png",
+        "11_698c2a1c4bd4413bcea54dad_695e5101bb6f2278efb7a571_231221_FINAL+DP+Diagrams++Page+017 5.png",
+        "12_698c2a1c2b78df61f299c474_695e51011a04f3d7ef93b050_231221_FINAL+DP+Diagrams++Page+017 7.png",
+        "13_698c2a1cf3203a6cbc7fb930_695e5101b5f08ce4016260ea_231221_FINAL+DP+Diagrams++Page+017 8.png",
+        "14_698c2a1c0b65e1a685460c93_695e5101c19022476f7b5a22_231221_FINAL+DP+Diagrams++Page+017 10.png",
+        "15_698c2a1c82d1249e183e7eaf_695e5101a18c3c5c9b1494dc_231221_FINAL+DP+Diagrams++Page+017 12.png",
+        "16_69c4da7c3fd97e1ec22dce1f_header_logo 1.png"
+      ]
+    },
+    {
+      "folder": "residential_waterline_square",
+      "title": "Waterline Square",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/waterline-square"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68ade26b41555bb5786a9788_COVER SHOT.jpg",
+        "02_68ade35b5d9f26d71c75acc3_201215_EJ_2_WSQ_26C_0025_HIGH RES_0010.jpg"
+      ]
+    },
+    {
+      "folder": "residential_whittier_street",
+      "title": "Whittier Street",
+      "type": "residential",
+      "type_raw": "Residential",
+      "source_urls": [
+        "https://www.drummondprojects.com/projects/whittier-street-"
+      ],
+      "detail_fetched": true,
+      "files": [
+        "01_68d31ed95e9663f83d7753ba_Living_Room_7.jpg"
+      ]
+    }
+  ]
+}

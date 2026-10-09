@@ -2,7 +2,7 @@
   var reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   var mobileQuery = window.matchMedia('(max-width: 768px)');
 
-  var PROJECTS = [
+  var FALLBACK_PROJECTS = [
     {
       name: 'Sanaa Center',
       images: [
@@ -63,6 +63,103 @@
       type: 'Installation · Cooke John Studio',
     },
   ];
+
+  var PROJECT_OVERLAYS = {
+    education_cultural_sanaa_center: {
+      name: 'Sanaa Center',
+      meta: 'Baltimore · In progress · Commercial / Cultural · 18,000 sq ft',
+      body:
+        'The Sanaa Center is for the cultural life of Pennsylvania Avenue in West Baltimore. 18,000 square feet for a 350-seat theatre, artist studios, production space, and a cafe and bar. A 4,000-square-foot addition to the Harris Marcus Center extends the work of Intersection of Change.',
+      records: ['18,000 sq ft', 'In progress', 'Baltimore'],
+      type: 'Commercial / Cultural',
+    },
+    hospitality_grounded: {
+      meta: 'Washington, DC · 2024 · Hospitality · 3,070 sq ft',
+      body: 'A hospitality project in Washington, DC. 3,070 square feet, completed in 2024.',
+      records: ['3,070 sq ft', '2024', 'Washington, DC'],
+      type: 'Hospitality',
+    },
+    commercial_co_lab: {
+      meta: 'Washington, DC · In progress · Commercial · 12,000 sq ft',
+      body: 'A commercial project in Washington, DC. 12,000 square feet, in progress.',
+      records: ['12,000 sq ft', 'In progress', 'Washington, DC'],
+      type: 'Commercial',
+    },
+    hospitality_elmina_dc: {
+      meta: 'Washington, DC · 2024 · Hospitality · 3,720 sq ft',
+      body: 'A hospitality project in Washington, DC. 3,720 square feet, completed in 2024.',
+      records: ['3,720 sq ft', '2024', 'Washington, DC'],
+      type: 'Hospitality',
+    },
+    installation_point_of_action: {
+      meta: 'New York · 2024 · Installation · with Cooke John Studio',
+      body:
+        'An installation in a public plaza in New York, 2024, with Cooke John Studio.',
+      records: ['Public plaza', '2024', 'New York'],
+      type: 'Installation · Cooke John Studio',
+    },
+  };
+
+  var PROJECTS = FALLBACK_PROJECTS.slice();
+
+  function workImageUrl(folder, filename) {
+    return 'assets/work/' + folder + '/' + encodeURIComponent(filename);
+  }
+
+  function recordsFromTypeRaw(typeRaw) {
+    var parts = typeRaw.split(/\s*[|,]\s*/).map(function (part) {
+      return part.trim();
+    }).filter(Boolean);
+    if (!parts.length) {
+      return [typeRaw];
+    }
+    return parts.length > 3 ? parts.slice(0, 3) : parts;
+  }
+
+  function mapManifestEntry(entry) {
+    var typeRaw = entry.type_raw || entry.type || '';
+    var images = (entry.files || []).map(function (file) {
+      return workImageUrl(entry.folder, file);
+    });
+    var overlay = PROJECT_OVERLAYS[entry.folder];
+    if (overlay) {
+      return {
+        name: overlay.name || entry.title,
+        images: images,
+        meta: overlay.meta,
+        body: overlay.body,
+        records: overlay.records.slice(),
+        type: overlay.type,
+      };
+    }
+    return {
+      name: entry.title,
+      images: images,
+      meta: typeRaw,
+      body: 'A ' + typeRaw + ' project by Drummond Projects.',
+      records: recordsFromTypeRaw(typeRaw),
+      type: typeRaw,
+    };
+  }
+
+  function loadProjects() {
+    return fetch('assets/work/manifest.json')
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('manifest unavailable');
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data.projects || !data.projects.length) {
+          throw new Error('manifest empty');
+        }
+        PROJECTS = data.projects.map(mapManifestEntry);
+      })
+      .catch(function () {
+        PROJECTS = FALLBACK_PROJECTS.slice();
+      });
+  }
 
   var leadIndex = 0;
   var featureIndex = 0;
@@ -172,9 +269,14 @@
       bodyEl.textContent = project.body;
     }
 
-    var statEls = featureEl.querySelectorAll('.record-stats li');
-    for (var s = 0; s < statEls.length && s < project.records.length; s++) {
-      statEls[s].textContent = project.records[s];
+    var statsEl = featureEl.querySelector('.record-stats');
+    if (statsEl) {
+      statsEl.innerHTML = '';
+      for (var s = 0; s < project.records.length; s++) {
+        var statLi = document.createElement('li');
+        statLi.textContent = project.records[s];
+        statsEl.appendChild(statLi);
+      }
     }
 
     var typeEl = featureEl.querySelector('.record-type');
@@ -472,6 +574,264 @@
     goTo(0);
   }
 
+  var IMPACT_MOSAIC_LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+  var IMPACT_FADE_MS = 800;
+  var IMPACT_INTERVAL_MIN = 1000;
+  var IMPACT_INTERVAL_MAX = 2000;
+
+  function buildImpactImagePool() {
+    var pool = [];
+    for (var p = 0; p < PROJECTS.length; p++) {
+      var project = PROJECTS[p];
+      for (var im = 0; im < project.images.length; im++) {
+        pool.push({
+          src: project.images[im],
+          name: project.name,
+        });
+      }
+    }
+    return pool;
+  }
+
+  function pickUniqueImpactSeed(pool, count) {
+    var shuffled = shuffleList(pool);
+    var picked = [];
+    var used = {};
+    for (var i = 0; i < shuffled.length && picked.length < count; i++) {
+      if (!used[shuffled[i].src]) {
+        used[shuffled[i].src] = true;
+        picked.push(shuffled[i]);
+      }
+    }
+    while (picked.length < count && shuffled.length) {
+      picked.push(shuffled[picked.length % shuffled.length]);
+    }
+    return picked;
+  }
+
+  function initImpactMosaic() {
+    var mosaic = document.querySelector('.impact-mosaic');
+    if (!mosaic) {
+      return;
+    }
+
+    var pool = buildImpactImagePool();
+    if (!pool.length) {
+      return;
+    }
+
+    var cells = [];
+    for (var li = 0; li < IMPACT_MOSAIC_LETTERS.length; li++) {
+      var cellEl = mosaic.querySelector('.mosaic-cell--' + IMPACT_MOSAIC_LETTERS[li]);
+      if (cellEl) {
+        cells.push(cellEl);
+      }
+    }
+    if (cells.length !== IMPACT_MOSAIC_LETTERS.length) {
+      return;
+    }
+
+    var seed = pickUniqueImpactSeed(pool, cells.length);
+    var cellStates = [];
+    var sectionVisible = true;
+
+    function activeSrcMap(excludeIndex) {
+      var map = {};
+      for (var s = 0; s < cellStates.length; s++) {
+        if (s !== excludeIndex && cellStates[s].currentSrc) {
+          map[cellStates[s].currentSrc] = true;
+        }
+      }
+      return map;
+    }
+
+    function pickImpactNext(excludeIndex, avoidSrc) {
+      var inUse = activeSrcMap(excludeIndex);
+      var candidates = [];
+      for (var c = 0; c < pool.length; c++) {
+        var entry = pool[c];
+        if (entry.src === avoidSrc) {
+          continue;
+        }
+        if (inUse[entry.src]) {
+          continue;
+        }
+        candidates.push(entry);
+      }
+      if (!candidates.length) {
+        for (var c2 = 0; c2 < pool.length; c2++) {
+          if (pool[c2].src !== avoidSrc) {
+            candidates.push(pool[c2]);
+          }
+        }
+      }
+      if (!candidates.length) {
+        candidates = pool.slice();
+      }
+      return candidates[Math.floor(Math.random() * candidates.length)];
+    }
+
+    function randomImpactDelay() {
+      return IMPACT_INTERVAL_MIN + Math.floor(Math.random() * (IMPACT_INTERVAL_MAX - IMPACT_INTERVAL_MIN + 1));
+    }
+
+    for (var ci = 0; ci < cells.length; ci++) {
+      var item = seed[ci] || pool[ci % pool.length];
+      cells[ci].innerHTML = '';
+
+      var currentImg = document.createElement('img');
+      currentImg.src = item.src;
+      currentImg.alt = item.name + ' photograph';
+      currentImg.width = 900;
+      currentImg.height = 700;
+      currentImg.className = 'is-visible';
+      currentImg.decoding = 'async';
+      cells[ci].appendChild(currentImg);
+
+      var incomingImg = null;
+      if (!reducedQuery.matches) {
+        incomingImg = document.createElement('img');
+        incomingImg.width = 900;
+        incomingImg.height = 700;
+        incomingImg.alt = '';
+        incomingImg.decoding = 'async';
+        incomingImg.className = '';
+        cells[ci].appendChild(incomingImg);
+      }
+
+      cellStates.push({
+        index: ci,
+        cell: cells[ci],
+        currentImg: currentImg,
+        incomingImg: incomingImg,
+        currentSrc: item.src,
+        timer: 0,
+      });
+    }
+
+    function clearCellTimers() {
+      for (var t = 0; t < cellStates.length; t++) {
+        clearTimeout(cellStates[t].timer);
+        cellStates[t].timer = 0;
+      }
+    }
+
+    function scheduleCell(state) {
+      clearTimeout(state.timer);
+      if (reducedQuery.matches || document.hidden || !sectionVisible) {
+        return;
+      }
+      state.timer = setTimeout(function () {
+        runCellSwap(state);
+      }, randomImpactDelay());
+    }
+
+    function scheduleAllCells() {
+      if (reducedQuery.matches || document.hidden || !sectionVisible) {
+        return;
+      }
+      for (var a = 0; a < cellStates.length; a++) {
+        scheduleCell(cellStates[a]);
+      }
+    }
+
+    function finishSwap(state, next) {
+      state.currentImg.src = next.src;
+      state.currentImg.alt = next.name + ' photograph';
+      state.currentImg.classList.add('is-visible');
+      if (state.incomingImg) {
+        state.incomingImg.classList.remove('is-visible');
+        state.incomingImg.removeAttribute('src');
+        state.incomingImg.alt = '';
+      }
+      state.currentSrc = next.src;
+      scheduleCell(state);
+    }
+
+    function runCellSwap(state) {
+      if (reducedQuery.matches || document.hidden || !sectionVisible) {
+        scheduleCell(state);
+        return;
+      }
+      if (!state.incomingImg) {
+        return;
+      }
+
+      var next = pickImpactNext(state.index, state.currentSrc);
+      if (!next) {
+        scheduleCell(state);
+        return;
+      }
+
+      var preloader = new Image();
+      preloader.onload = function () {
+        if (reducedQuery.matches || document.hidden || !sectionVisible) {
+          scheduleCell(state);
+          return;
+        }
+
+        var incoming = state.incomingImg;
+        incoming.src = next.src;
+        incoming.alt = next.name + ' photograph';
+
+        var settled = false;
+        function settle() {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          incoming.removeEventListener('transitionend', onTransitionEnd);
+          clearTimeout(fallbackTimer);
+          finishSwap(state, next);
+        }
+
+        function onTransitionEnd(event) {
+          if (event.target !== incoming || event.propertyName !== 'opacity') {
+            return;
+          }
+          settle();
+        }
+
+        incoming.addEventListener('transitionend', onTransitionEnd);
+        var fallbackTimer = setTimeout(settle, IMPACT_FADE_MS + 120);
+
+        requestAnimationFrame(function () {
+          incoming.classList.add('is-visible');
+        });
+      };
+      preloader.onerror = function () {
+        scheduleCell(state);
+      };
+      preloader.src = next.src;
+    }
+
+    var impactSection = document.getElementById('impact');
+    if (impactSection && typeof IntersectionObserver === 'function') {
+      var impactObserver = new IntersectionObserver(
+        function (entries) {
+          sectionVisible = entries[0] && entries[0].isIntersecting;
+          if (sectionVisible) {
+            scheduleAllCells();
+          } else {
+            clearCellTimers();
+          }
+        },
+        { root: null, rootMargin: '120px 0px', threshold: 0 }
+      );
+      impactObserver.observe(impactSection);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        clearCellTimers();
+      } else if (sectionVisible) {
+        scheduleAllCells();
+      }
+    });
+
+    scheduleAllCells();
+  }
+
   function initNewsletter() {
     var dialog = document.getElementById('newsletter');
     var work = document.getElementById('work');
@@ -553,10 +913,13 @@
   }
 
   function init() {
-    initFeaturedWork();
-    initNavCurrent();
-    initHeroReel();
-    initNewsletter();
+    loadProjects().then(function () {
+      initFeaturedWork();
+      initNavCurrent();
+      initHeroReel();
+      initImpactMosaic();
+      initNewsletter();
+    });
   }
 
   if (document.readyState === 'loading') {
