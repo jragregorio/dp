@@ -960,6 +960,7 @@ address {
 .mosaic-cell img {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -968,7 +969,14 @@ address {
   transition: opacity 0.8s var(--ease-in-out);
 }
 
+.mosaic-cell img:not([src]),
+.mosaic-cell img[src=''] {
+  visibility: hidden;
+  opacity: 0 !important;
+}
+
 .mosaic-cell img.is-visible {
+  z-index: 1;
   opacity: 1;
 }
 

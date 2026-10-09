@@ -693,7 +693,8 @@
         incomingImg = document.createElement('img');
         incomingImg.width = 900;
         incomingImg.height = 700;
-        incomingImg.alt = '';
+        incomingImg.src = item.src;
+        incomingImg.alt = item.name + ' photograph';
         incomingImg.decoding = 'async';
         incomingImg.className = '';
         cells[ci].appendChild(incomingImg);
@@ -736,14 +737,16 @@
     }
 
     function finishSwap(state, next) {
-      state.currentImg.src = next.src;
-      state.currentImg.alt = next.name + ' photograph';
-      state.currentImg.classList.add('is-visible');
-      if (state.incomingImg) {
-        state.incomingImg.classList.remove('is-visible');
-        state.incomingImg.removeAttribute('src');
-        state.incomingImg.alt = '';
+      if (!state.incomingImg) {
+        state.currentSrc = next.src;
+        scheduleCell(state);
+        return;
       }
+      var newCurrent = state.incomingImg;
+      var newIncoming = state.currentImg;
+      newIncoming.classList.remove('is-visible');
+      state.currentImg = newCurrent;
+      state.incomingImg = newIncoming;
       state.currentSrc = next.src;
       scheduleCell(state);
     }
