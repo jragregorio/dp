@@ -948,6 +948,7 @@ address {
   grid-auto-rows: minmax(8rem, auto);
   gap: clamp(0.65rem, 1.2vw, 1rem);
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  transition: opacity 280ms var(--ease-in-out);
 }
 
 .mosaic-cell {
@@ -980,46 +981,219 @@ address {
   opacity: 1;
 }
 
-.mosaic-cell--a {
+/* l0 — large left hero + right stack (default geometry) */
+.impact-mosaic--l0 .mosaic-cell--a {
   grid-column: 1 / span 5;
   grid-row: span 2;
   min-height: 18rem;
 }
 
-.mosaic-cell--b {
+.impact-mosaic--l0 .mosaic-cell--b {
   grid-column: 6 / span 4;
   grid-row: span 1;
   min-height: 12rem;
 }
 
-.mosaic-cell--c {
+.impact-mosaic--l0 .mosaic-cell--c {
   grid-column: 10 / span 3;
   grid-row: span 2;
   min-height: 16rem;
 }
 
-.mosaic-cell--d {
+.impact-mosaic--l0 .mosaic-cell--d {
   grid-column: 6 / span 3;
   grid-row: span 1;
   min-height: 10rem;
 }
 
-.mosaic-cell--e {
+.impact-mosaic--l0 .mosaic-cell--e {
   grid-column: 1 / span 3;
   grid-row: span 1;
   min-height: 11rem;
 }
 
-.mosaic-cell--f {
+.impact-mosaic--l0 .mosaic-cell--f {
   grid-column: 4 / span 5;
   grid-row: span 1;
   min-height: 11rem;
 }
 
-.mosaic-cell--g {
+.impact-mosaic--l0 .mosaic-cell--g {
   grid-column: 9 / span 4;
   grid-row: span 1;
   min-height: 11rem;
+}
+
+/* l1 — large tile on the right, tall left strip */
+.impact-mosaic--l1 .mosaic-cell--a {
+  grid-column: 1 / span 3;
+  grid-row: span 2;
+  min-height: 16rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--b {
+  grid-column: 4 / span 4;
+  grid-row: span 1;
+  min-height: 12rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--c {
+  grid-column: 8 / span 5;
+  grid-row: span 2;
+  min-height: 18rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--d {
+  grid-column: 4 / span 4;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--e {
+  grid-column: 1 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--f {
+  grid-column: 5 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l1 .mosaic-cell--g {
+  grid-column: 9 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+/* l2 — cinematic top band + four tiles below */
+.impact-mosaic--l2 .mosaic-cell--a {
+  grid-column: 1 / span 9;
+  grid-row: span 1;
+  min-height: 13rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--b {
+  grid-column: 10 / span 3;
+  grid-row: span 2;
+  min-height: 16rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--c {
+  grid-column: 1 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--d {
+  grid-column: 4 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--e {
+  grid-column: 7 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--f {
+  grid-column: 1 / span 6;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l2 .mosaic-cell--g {
+  grid-column: 7 / span 6;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+/* l3 — tall left strip + clustered center/right */
+.impact-mosaic--l3 .mosaic-cell--a {
+  grid-column: 1 / span 3;
+  grid-row: span 3;
+  min-height: 20rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--b {
+  grid-column: 4 / span 5;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--c {
+  grid-column: 9 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--d {
+  grid-column: 4 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--e {
+  grid-column: 7 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--f {
+  grid-column: 10 / span 3;
+  grid-row: span 1;
+  min-height: 10rem;
+}
+
+.impact-mosaic--l3 .mosaic-cell--g {
+  grid-column: 4 / span 9;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+/* l4 — balanced mid-size grid + wide bottom */
+.impact-mosaic--l4 .mosaic-cell--a {
+  grid-column: 1 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--b {
+  grid-column: 5 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--c {
+  grid-column: 9 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--d {
+  grid-column: 1 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--e {
+  grid-column: 5 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--f {
+  grid-column: 9 / span 4;
+  grid-row: span 1;
+  min-height: 11rem;
+}
+
+.impact-mosaic--l4 .mosaic-cell--g {
+  grid-column: 1 / span 12;
+  grid-row: span 1;
+  min-height: 10rem;
 }
 
 .impact-cta-wrap {
@@ -1273,6 +1447,10 @@ address {
   }
 
   .mosaic-cell img {
+    transition: none;
+  }
+
+  .impact-mosaic {
     transition: none;
   }
 
