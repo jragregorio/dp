@@ -2,12 +2,16 @@
   var reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   var mobileQuery = window.matchMedia('(max-width: 768px)');
 
+  function workImageUrl(folder, filename) {
+    return 'assets/work/' + folder + '/' + encodeURIComponent(filename);
+  }
+
   var FALLBACK_PROJECTS = [
     {
       name: 'Sanaa Center',
       images: [
-        'assets/sanaa/sanaa1.jpg',
-        'assets/sanaa/sanaa2.jpg',
+        workImageUrl('education_cultural_sanaa_center', '01_68a59fea0f1ba6e482a7dbc8_sanaa-.png'),
+        workImageUrl('education_cultural_sanaa_center', '02_68b0227def7f9ce8066f16e4_Frame 174.png'),
       ],
       meta: 'Baltimore · In progress · Commercial / Cultural · 18,000 sq ft',
       body:
@@ -17,7 +21,10 @@
     },
     {
       name: 'Grounded',
-      images: ['assets/grounded/grounded1.jpg'],
+      images: [
+        workImageUrl('hospitality_grounded', '01_68ad3f57c8f37747f4965bee_06-DRUM_GRND_11-24\u252c\u2310ArseniKhamzin_LR.jpg'),
+        workImageUrl('hospitality_grounded', '02_68ad3fde03e50daa7ca7fe73_14-DRUM_GRND_11-24\u252c\u2310ArseniKhamzin_LR.jpg'),
+      ],
       meta: 'Washington, DC · 2024 · Hospitality · 3,070 sq ft',
       body: 'A hospitality project in Washington, DC. 3,070 square feet, completed in 2024.',
       records: ['3,070 sq ft', '2024', 'Washington, DC'],
@@ -26,14 +33,21 @@
     {
       name: 'Co-Lab',
       images: [
-        'assets/colab/colab1.jpg',
-        'assets/colab/colab2.jpg',
-        'assets/colab/colab3.jpg',
-        'assets/colab/colab4.jpg',
-        'assets/colab/colab5.jpg',
-        'assets/colab/colab6.jpg',
-        'assets/colab/colab7.jpg',
-        'assets/colab/colab8.jpg',
+        workImageUrl('commercial_co_lab', '01_68ad23cf928c7e66c48bb1ac_Community change final images (1).jpg'),
+        workImageUrl('commercial_co_lab', '02_69b93d0340c92fe1d6a072f9_DP_CommunityChange-30.jpg'),
+        workImageUrl('commercial_co_lab', '03_69b93d3c3964086fa36fbf4f_DP_CommunityChange-23.jpg'),
+        workImageUrl('commercial_co_lab', '04_69b93ddf2025f28201dd406d_DP_CommunityChange-32-2.jpg'),
+        workImageUrl('commercial_co_lab', '05_69b93e0a1e637f5b60d2d92b_DP_CommunityChange-17.jpg'),
+        workImageUrl('commercial_co_lab', '06_69b93eeeafb17f9ef2cc0bd1_DP_CommunityChange-19B.jpg'),
+        workImageUrl('commercial_co_lab', '07_69b93e6bc840370a0c80045d_DP_CommunityChange-22.jpg'),
+        workImageUrl('commercial_co_lab', '08_69b9406fb05456b1973173d1_DP_CommunityChange-25.jpg'),
+        workImageUrl('commercial_co_lab', '09_69b93f5fb9f1bee5ed087657_DP_CommunityChange-28.jpg'),
+        workImageUrl('commercial_co_lab', '10_69b93f718a5c87f01654ec59_DP_CommunityChange-21.jpg'),
+        workImageUrl('commercial_co_lab', '11_69b93ffda43a3161695171e6_DP_CommunityChange-27.jpg'),
+        workImageUrl('commercial_co_lab', '12_69b93fa2993fe1e7e6e6f252_DP_CommunityChange-33.jpg'),
+        workImageUrl('commercial_co_lab', '13_69b940b274a582fcc1c374bf_DP_CommunityChange-31.jpg'),
+        workImageUrl('commercial_co_lab', '14_69b94112011dcbdfec365148_DP_CommunityChange-36B-2.jpg'),
+        workImageUrl('commercial_co_lab', '15_69b940c153cf70693a89259a_DP_CommunityChange-35.jpg'),
       ],
       meta: 'Washington, DC · In progress · Commercial · 12,000 sq ft',
       body: 'A commercial project in Washington, DC. 12,000 square feet, in progress.',
@@ -43,10 +57,11 @@
     {
       name: 'Elmina',
       images: [
-        'assets/elmina/elmina1.jpg',
-        'assets/elmina/elmina2.jpg',
-        'assets/elmina/elmina3.jpg',
-        'assets/elmina/elmina4.jpg',
+        workImageUrl('hospitality_elmina_dc', '01_68ad36fe5e7595655db4e1b9_Elmina-1.jpg'),
+        workImageUrl('hospitality_elmina_dc', '02_68ad385ca645cf5ec6ef2384_Elmina-29.jpg'),
+        workImageUrl('hospitality_elmina_dc', '03_68ad3853ba03672548a9513e_Elmina-28.jpg'),
+        workImageUrl('hospitality_elmina_dc', '04_68ad387aba03672548a97d39_Elmina-16.jpg'),
+        workImageUrl('hospitality_elmina_dc', '05_68ad387cc6ae43a322b9af75_Elmina-20.jpg'),
       ],
       meta: 'Washington, DC · 2024 · Hospitality · 3,720 sq ft',
       body: 'A hospitality project in Washington, DC. 3,720 square feet, completed in 2024.',
@@ -55,7 +70,10 @@
     },
     {
       name: 'Point of Action',
-      images: ['assets/pointofaction/pointofaction1.jpg'],
+      images: [
+        workImageUrl('installation_point_of_action', '01_68add91f56ac4ca4896b3bd9_COVER PHOTO.jpg'),
+        workImageUrl('installation_point_of_action', '02_68add9412321056e64d87faa_DSC06478.jpg'),
+      ],
       meta: 'New York · 2024 · Installation · with Cooke John Studio',
       body:
         'An installation in a public plaza in New York, 2024, with Cooke John Studio.',
@@ -101,10 +119,6 @@
   };
 
   var PROJECTS = FALLBACK_PROJECTS.slice();
-
-  function workImageUrl(folder, filename) {
-    return 'assets/work/' + folder + '/' + encodeURIComponent(filename);
-  }
 
   function recordsFromTypeRaw(typeRaw) {
     var parts = typeRaw.split(/\s*[|,]\s*/).map(function (part) {
