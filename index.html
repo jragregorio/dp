@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=impactmosaic4">
+  <link rel="stylesheet" href="styles.css?v=chatbot4">
 </head>
 <body>
   <nav class="site-nav site-nav--bar" aria-label="Primary">
@@ -264,6 +264,54 @@
       <p class="footer-bar">&copy; Drummond Projects 2026</p>
     </div>
   </footer>
+  <div class="studio-chat" data-studio-chat>
+    <div
+      class="studio-chat__panel"
+      id="studio-chat-panel"
+      role="dialog"
+      aria-labelledby="studio-chat-heading"
+      aria-hidden="true"
+    >
+      <header class="studio-chat__header">
+        <div class="studio-chat__brand">
+          <span class="studio-chat__mark" aria-hidden="true">
+            <img src="assets/dp_favicon.png" width="20" height="20" alt="" aria-hidden="true">
+          </span>
+          <div class="studio-chat__brand-text">
+            <p class="studio-chat__brand-name" id="studio-chat-heading">Drummond Projects</p>
+            <p class="studio-chat__brand-role">Studio</p>
+          </div>
+        </div>
+        <button type="button" class="studio-chat__close" aria-label="Close chat" data-studio-chat-close>&times;</button>
+      </header>
+      <div class="studio-chat__thread" data-studio-chat-thread aria-live="polite">
+        <div class="studio-chat__msg studio-chat__msg--bot">
+          <p>How can the studio help?</p>
+        </div>
+      </div>
+      <div class="studio-chat__actions" data-studio-chat-actions>
+        <button type="button" class="studio-chat__chip" data-studio-chat-query="appointment">Schedule an Appointment</button>
+        <button type="button" class="studio-chat__chip" data-studio-chat-query="newsletter">Join newsletter</button>
+      </div>
+      <p class="studio-chat__footnote">Preview only — messages stay on this page.</p>
+    </div>
+    <div class="studio-chat__dock">
+      <button type="button" class="studio-chat__teaser" data-studio-chat-teaser hidden>
+        <span class="studio-chat__teaser-lead">Need a hand framing a project?</span>
+        <span class="studio-chat__teaser-sub">The studio can help.</span>
+      </button>
+      <button
+        type="button"
+        class="studio-chat__fab"
+        data-studio-chat-fab
+        aria-label="Open studio chat"
+        aria-expanded="false"
+        aria-controls="studio-chat-panel"
+      >
+        <img class="studio-chat__fab-mark" src="assets/dp_favicon.png" width="32" height="32" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </div>
   <dialog class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
     <div class="newsletter__panel">
       <button type="button" class="newsletter__close" aria-label="Close" data-newsletter-close>&times;</button>
@@ -283,6 +331,6 @@
       </div>
     </div>
   </dialog>
-  <script src="motion.js?v=assetscleanup1" defer></script>
+  <script src="motion.js?v=chatbot4" defer></script>
 </body>
 </html>

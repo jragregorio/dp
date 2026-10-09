@@ -1007,9 +1007,215 @@
         }
       });
     }
+
+    document.addEventListener('dp:open-newsletter', function () {
+      openDialog();
+    });
+    window.dpOpenNewsletter = openDialog;
+  }
+
+  function initChatbot() {
+    var root = document.querySelector('[data-studio-chat]');
+    if (!root) return;
+
+    var fab = root.querySelector('[data-studio-chat-fab]');
+    var panel = root.querySelector('#studio-chat-panel');
+    var teaser = root.querySelector('[data-studio-chat-teaser]');
+    var thread = root.querySelector('[data-studio-chat-thread]');
+    var closers = root.querySelectorAll('[data-studio-chat-close]');
+    var chips = root.querySelectorAll('[data-studio-chat-query]');
+    if (!fab || !panel || !thread) return;
+
+    var isOpen = false;
+    var nudgeDone = false;
+    var teaserTimer = null;
+    var teaserHideTimer = null;
+    var nudgeTimer = null;
+    var reducedMotion = reducedQuery.matches;
+
+    panel.setAttribute('inert', '');
+
+    function dismissTeaser() {
+      if (!teaser) return;
+      if (teaserTimer) {
+        clearTimeout(teaserTimer);
+        teaserTimer = null;
+      }
+      if (teaser.hidden) return;
+      if (teaserHideTimer) {
+        clearTimeout(teaserHideTimer);
+        teaserHideTimer = null;
+      }
+      if (!teaser.classList.contains('is-visible')) return;
+
+      teaser.classList.remove('is-visible');
+
+      function finalizeHide() {
+        teaser.hidden = true;
+        teaserHideTimer = null;
+      }
+
+      if (reducedMotion) {
+        teaserHideTimer = setTimeout(finalizeHide, 0);
+        return;
+      }
+
+      function onTeaserTransitionEnd(event) {
+        if (event.target !== teaser || event.propertyName !== 'opacity') return;
+        teaser.removeEventListener('transitionend', onTeaserTransitionEnd);
+        if (teaserHideTimer) {
+          clearTimeout(teaserHideTimer);
+          teaserHideTimer = null;
+        }
+        finalizeHide();
+      }
+
+      teaser.addEventListener('transitionend', onTeaserTransitionEnd);
+      teaserHideTimer = setTimeout(function () {
+        teaser.removeEventListener('transitionend', onTeaserTransitionEnd);
+        finalizeHide();
+      }, 480);
+    }
+
+    function showTeaser() {
+      if (!teaser || isOpen) return;
+      if (teaserHideTimer) {
+        clearTimeout(teaserHideTimer);
+        teaserHideTimer = null;
+      }
+      teaser.hidden = false;
+      requestAnimationFrame(function () {
+        teaser.classList.add('is-visible');
+      });
+      teaserTimer = setTimeout(dismissTeaser, 6000);
+    }
+
+    function runNudge() {
+      if (nudgeDone || isOpen) return;
+      nudgeDone = true;
+      if (!reducedMotion) {
+        fab.classList.add('is-nudging');
+        fab.addEventListener(
+          'animationend',
+          function onEnd() {
+            fab.removeEventListener('animationend', onEnd);
+            fab.classList.remove('is-nudging');
+          },
+          { once: true }
+        );
+      }
+      showTeaser();
+    }
+
+    function setOpen(next) {
+      if (next === isOpen) return;
+      isOpen = next;
+      dismissTeaser();
+      root.classList.toggle('studio-chat--open', isOpen);
+      panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      if (isOpen) {
+        panel.removeAttribute('inert');
+      } else {
+        panel.setAttribute('inert', '');
+      }
+      fab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      fab.setAttribute('aria-label', isOpen ? 'Close studio chat' : 'Open studio chat');
+      if (isOpen) {
+        var closeBtn = panel.querySelector('.studio-chat__close');
+        if (closeBtn) closeBtn.focus();
+      } else {
+        fab.focus();
+      }
+    }
+
+    function toggleOpen() {
+      setOpen(!isOpen);
+    }
+
+    function appendMessage(kind, html) {
+      var node = document.createElement('div');
+      node.className = 'studio-chat__msg studio-chat__msg--' + kind;
+      var p = document.createElement('p');
+      p.innerHTML = html;
+      node.appendChild(p);
+      thread.appendChild(node);
+      thread.scrollTop = thread.scrollHeight;
+    }
+
+    function disableChip(chip) {
+      chip.disabled = true;
+      chip.classList.add('is-used');
+    }
+
+    function replyDelay(fn) {
+      if (reducedMotion) {
+        fn();
+      } else {
+        setTimeout(fn, 400);
+      }
+    }
+
+    function handleQuery(chip) {
+      if (chip.disabled || chip.classList.contains('is-used')) return;
+      var query = chip.getAttribute('data-studio-chat-query');
+      var label = chip.textContent.replace(/\s+/g, ' ').trim();
+      disableChip(chip);
+
+      appendMessage('user', label);
+
+      if (query === 'appointment') {
+        replyDelay(function () {
+          appendMessage(
+            'bot',
+            'This preview does not book a time. Reach the studio at ' +
+              '<a href="mailto:studio@drummondprojects.com">studio@drummondprojects.com</a> or ' +
+              '<a href="tel:+12029195115">(202) 919-5115</a>.'
+          );
+        });
+        return;
+      }
+
+      if (query === 'newsletter') {
+        replyDelay(function () {
+          appendMessage('bot', 'Opening studio notes — add your email there.');
+          document.dispatchEvent(new CustomEvent('dp:open-newsletter'));
+        });
+      }
+    }
+
+    fab.addEventListener('click', toggleOpen);
+
+    for (var c = 0; c < closers.length; c++) {
+      closers[c].addEventListener('click', function () {
+        setOpen(false);
+      });
+    }
+
+    for (var i = 0; i < chips.length; i++) {
+      (function (chip) {
+        chip.addEventListener('click', function () {
+          handleQuery(chip);
+        });
+      })(chips[i]);
+    }
+
+    if (teaser) {
+      teaser.addEventListener('click', dismissTeaser);
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !isOpen) return;
+      var newsletterDialog = document.getElementById('newsletter');
+      if (newsletterDialog && newsletterDialog.open) return;
+      event.stopPropagation();
+      setOpen(false);
+    });
+
+    nudgeTimer = setTimeout(runNudge, 1800);
   }
 
   function init() {
+    initChatbot();
     loadProjects().then(function () {
       initFeaturedWork();
       initNavCurrent();
