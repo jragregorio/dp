@@ -1493,20 +1493,15 @@ address {
     grid-template-columns: 1fr 1fr;
   }
 
-  .mosaic-cell--a,
-  .mosaic-cell--b,
-  .mosaic-cell--c,
-  .mosaic-cell--d,
-  .mosaic-cell--e,
-  .mosaic-cell--f,
-  .mosaic-cell--g {
+  .impact-mosaic[class*='--l'] .mosaic-cell {
     grid-column: auto;
     grid-row: auto;
-    min-height: 10rem;
+    min-height: 11rem;
   }
 
-  .mosaic-cell--a {
+  .impact-mosaic[class*='--l'] .mosaic-cell--a {
     grid-column: 1 / -1;
+    min-height: 13rem;
   }
 
   .footer-grid {
